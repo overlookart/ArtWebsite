@@ -4,3 +4,4 @@
 *.lk
 *.zip
 .idea
+/node_modules/

@@ -1,5 +1,5 @@
 <!DOCTYPE html> <!-- 声明为 HTML5 文档-->
-<html> <!--元素是 HTML 页面的根元素-->
+<html xmlns="http://www.w3.org/1999/html"> <!--元素是 HTML 页面的根元素-->
 	<head>
 	<!--
 	head 元素
@@ -36,8 +36,9 @@
 
 		<!--
 		<base> 标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接:
-		-->
 		<base href="https://www.runoob.com/images/" target="_blank">
+		-->
+
 
 		<!-
 		title 元素描述了文档的标题
@@ -48,13 +49,15 @@
 		<link> 标签定义了文档与外部资源之间的关系,通常用于链接到样式表
 		-->
 		<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
-
+        <link rel="stylesheet" type="text/css" href="css/main.css">
 
 		<!--<script>---------------------------------------------------------------------------
 		标签用于加载脚本文件，如： JavaScript
-		-->
 		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+		-->
+
+
 		<!--<noscript> 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。
 			<noscript>元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。
 			只有在浏览器不支持脚本或者禁用脚本时，才会显示 <noscript> 元素中的内容：-->
@@ -64,8 +67,8 @@
 		 style 标签定义了HTML文档的样式文件引用地址,元素中你也可以直接添加样式来渲染 HTML 文档
 		 -->
 		<style type="text/css">
-			body {background-color: gray}
-			p {color: beige}
+
+			p {color: orange}
 		</style>
 
 
@@ -86,6 +89,8 @@
 	<blockquote>引用一大段话，自动缩进,引用一大段话，自动缩进,引用一大段话，自动缩进</blockquote>
 
 	<hr>
+
+    <!--文本格式化标签 b em i small strong sub sup ins del-->
 	<p> HTML 文本格式化标签 <br>
 		<b>b标签 的粗体文本</b><br>
 		<em>em标签 的着重文字 __斜体</em><br>
@@ -99,18 +104,20 @@
 	</p>
 	<hr>
 
-
+    <!--ul标签的无序列表-->
 	<ul> ul标签的无序列表 li
 		<li>无序列表</li>
 		<li>前 html5 vue</li>
 		<li>后 vapor</li>
 	</ul>
 
+    <!--ol标签的有序列表-->
 	<ol> ol标签的有序列表
 		<li>jde</li>
 		<li>黑色</li>
 	</ol>
 
+    <!--dl标签的自定义列表-->
 	<dl> dl标签的自定义列表
 		<dt>dt 标题1</dt>
 		<dd>dd 内容1</dd>
@@ -118,6 +125,7 @@
 		<dd>dd 内容2</dd>
 	</dl>
 
+    <!--div-->
 	<div style="color: antiquewhite; background-color: darkslategray; width: 200px">
 		<p>div：定义文档中的一个区域部分
 			一般用于组合块级元素， 可以方便css来对子元素进行设置</p>
@@ -128,6 +136,7 @@
 	 -->
 	<p style="color:red;">今天是个<span style="color:green;font-size:20px;">好日子</span>，是一个考试的好日子</p>
 
+    <!--计算机输出标签 code kbd samp var pre-->
 	<p> HTML "计算机输出" 标签 <br>
 		<code>cdoe标签 告诉浏览器内部是代码,大小适应内容 int a = 0</code><br>
 		<kbd>kbd标签 的定义键盘码</kbd><br>
@@ -274,14 +283,16 @@
 	通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。
 	<iframe src="URL"></iframe>
 	frameborder 属性用于定义iframe表示是否显示边框。设置属性值为 "0" 移除iframe的边框:
-	-->
 	<iframe src="index.html" width="100%" height="200" frameborder="0" ></iframe>
+	-->
+
 	<!--
 	使用iframe来显示目标链接页面
 	iframe可以显示一个目标链接的页面
 	目标链接的属性必须使用iframe的属性，如下实例:
-	-->
 	<iframe src="index.html" name="iframe_a"></iframe>
+	-->
+
 	<p><a href="//github.com" target="iframe_a" rel="noopener">github</a></p>
 	</body>
 </html>

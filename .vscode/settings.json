@@ -1,0 +1,16 @@
+{
+    "workbench.colorCustomizations": {
+        
+    },
+    
+    "vscode_custom_css.imports" : [
+        "file:///Users/caigou/Developer/vscode/theme/synthwave84.css",
+        "file:///Users/caigou/Developer/vscode/theme/terminal.css",
+        "file:///Users/caigou/Developer/vscode/theme/vscode-vibrancy-style.css",
+        "file:///Users/caigou/Developer/vscode/theme/toolbar.css",
+        "file:///Users/caigou/Developer/vscode/theme/enable-electron-vibrancy.js"
+    ],
+        
+    "vscode_custom_css.policy": true,
+    "terminal.integrated.rendererType" : "dom",
+}

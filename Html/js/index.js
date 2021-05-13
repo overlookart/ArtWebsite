@@ -1,3 +1,15 @@
+var ishidden = false;
 function testFunc() {
-    console.log("测试的方法")
+    
+    var e = document.getElementById('menu_view');
+    var s = e.style;
+    if (ishidden) {
+        s.width = '200px';
+    }else{
+        s.width = '57px';
+    }
+    ishidden = !ishidden;
+    console.log("测试的方法");
+    
+
 }

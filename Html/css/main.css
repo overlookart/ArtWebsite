@@ -165,23 +165,43 @@ content 内容   盒子的内容，显示文本和图像
 #app{
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
 #navigation_bar{
+  background-color: rgba(0, 0, 0, 0.3);
+
   width: 100%;
   height: 70px;
-  position: relative;
+  position: fixed;
   top: 0px;
-  background-color: khaki;
+}
+.pull-btn{
+  width: 50px;
+  height: 50px;
+  background-color: rosybrown;
+
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin-left: 10px;
+  margin-top: 10px;
+  
 }
 
 #menu_view{
+  background-color: rgba(0, 0, 0, 0.1);
+
   width: 200px;
   height: 100%;
+  
   padding-left: 10px;
   padding-top: 10px;
   padding-right: 10px;
   
+  position: absolute;
+  top: 70px;
+
 }
 
 #nemu_btn{
@@ -189,13 +209,38 @@ content 内容   盒子的内容，显示文本和图像
   height: 40px;
   margin-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.3);
+  color: honeydew;
+}
+
+#content_view{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  position: relative;
+  top: 70px;
+  left: 200px;
+  right: 200px;
+
+  padding: 10px;
+}
+
+.card_view{
+  width: 300px;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.3);
+  
 }
 
 #right_view{
   width: 200px;
   height: 100%;
-  position: absolute;
+  
+  position: fixed;
   right: 0px;
   top: 70px;
+}
 
+@media screen {
+  
 }

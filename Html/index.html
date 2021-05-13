@@ -27,11 +27,12 @@
 		<meta name="description" content="html 文档结构及标签说明">
 		<!--定义网页作者-->
 		<meta name="author" content="xzh">
-		<!--每30秒钟刷新当前页面-->
-		<meta http-equiv="refresh" content="30">
+		<!--每30000秒钟刷新当前页面-->
+		<meta http-equiv="refresh" content="30000">
 		<!--编码声明 定义网页编码格式为 utf-8-->
 		<meta charset="utf-8" />
-		<meta name="viewport" content="">
+		<!-- viewport 响应式 优化移动浏览器-->
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 
 
 		<!--
@@ -56,7 +57,7 @@
 		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
 		-->
-
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
 
 		<!--<noscript> 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。
 			<noscript>元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。
@@ -74,7 +75,23 @@
 
 	</head>
 	<body><!--元素包含了可见的页面内容-->
-    <div id="app"></div>
+    <div id="app">
+		<div id="navigation_bar">
+
+		</div>
+		<div id="menu_view">
+			<input id="nemu_btn" type="button" value="第一个菜单"><br>
+			<input id="nemu_btn" type="button" value="第二个菜单"><br>
+			<input id="nemu_btn" type="button" value="第三个菜单"><br>
+			<input id="nemu_btn" type="button" value="第四个菜单"><br>
+			<input id="nemu_btn" type="button" value="第五个菜单"><br>
+			<input id="nemu_btn" type="button" value="第六个菜单"><br>
+			<input id="nemu_btn" type="button" value="第七个菜单"><br>
+		</div>
+		<div id="right_view">
+			<input id="nemu_btn" type="button" value="右侧按钮"><br>
+		</div>
+	</div>
 	<h1>h1标签 的标题标签</h1> <!--元素定义一个大标题-->
 	<h2>h2标签 的标题标签</h2>
 	<h3>h3标签 的标题标签</h3>

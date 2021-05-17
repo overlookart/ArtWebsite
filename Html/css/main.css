@@ -128,6 +128,8 @@ body {
     background-attachment: scroll;
     /*背景图的展示位置*/
     background-position: 100% 0%;
+    /*将背景图填充到整个屏幕*/
+    background-size: cover;
 
     /*字体*/
     font-family: ".SF NS Mono";

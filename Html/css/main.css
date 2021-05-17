@@ -224,13 +224,17 @@ content 内容   盒子的内容，显示文本和图像
   left: 200px;
   right: 200px;
 
-  padding: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .card_view{
   width: 300px;
   height: 200px;
   background-color: rgba(0, 0, 0, 0.3);
+
+  margin-top: 10px;
+  margin-left: 10px;
   
 }
 

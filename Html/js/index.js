@@ -14,3 +14,13 @@ function testFunc() {
 
 }
 
+/**
+Vue.config.productionTip = false
+new Vue({
+    el: "#one",
+    template: "<one/>",
+    components: {one}
+})
+ */
+
+

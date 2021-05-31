@@ -6,6 +6,8 @@
   "dependencies": {
     "core-js": "^3.11.3",
     "element-ui": "^2.15.2",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^6.0.0",
     "vue": "^2.6.12"
   },
   "devDependencies": {

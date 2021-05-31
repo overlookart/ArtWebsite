@@ -15,18 +15,20 @@
      text-color="#303133"
      active-text-color="#409EFF"
      default-active="1"
+     class="el-menu-vertical-demo"
      @open="openMenuAction"
      @close="closeMenuAction"
+     @select="selectMenuAction"
      >
        <el-submenu index="1">
+            <i class="el-icon-location"></i>
             <span slot="title">Menu</span>
             <el-menu-item index="1-1"></el-menu-item>
             <el-menu-item index="1-2"></el-menu-item>
        </el-submenu>
        <el-submenu index="2">
+            <i class="el-icon-menu"></i>
             <span slot="title">ksbe</span>
-            <el-menu-item index="1-1"></el-menu-item>
-            <el-menu-item index="1-2"></el-menu-item>
        </el-submenu>
      </el-menu>
  </div>
@@ -40,7 +42,9 @@ export default {
     data () {
       return {
         menus: [
+            {
 
+            }
         ]
       }
     },
@@ -56,6 +60,10 @@ export default {
 
         closeMenuAction(key, keyPath){
             console.log("关闭菜单",key, keyPath);
+        },
+
+        selectMenuAction(key, keyPath){
+            console.log("选中菜单",key, keyPath);
         }
     },
 /*------生命周期-------*/
@@ -79,5 +87,8 @@ export default {
 </script>
  
 <style>
-
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
 </style>

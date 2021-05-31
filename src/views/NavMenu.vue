@@ -11,7 +11,7 @@
  <div class="">
      <el-menu 
      mode="vertical"
-     background-color="#909399"
+     background-color="#ffffff"
      text-color="#303133"
      active-text-color="#409EFF"
      default-active="1"
@@ -21,14 +21,28 @@
      @select="selectMenuAction"
      >
        <el-submenu index="1">
-            <i class="el-icon-location"></i>
-            <span slot="title">Menu</span>
-            <el-menu-item index="1-1"></el-menu-item>
-            <el-menu-item index="1-2"></el-menu-item>
+            <template slot="title">
+                <i class="el-icon-menu"></i>
+                <span>Menu</span>
+            </template>
+            <el-menu-item index="1-1">
+                <i class="el-icon-shopping-cart-2"></i>
+            </el-menu-item>
+            <el-menu-item index="1-2">
+                <i class="el-icon-present"></i>
+            </el-menu-item>
        </el-submenu>
        <el-submenu index="2">
-            <i class="el-icon-menu"></i>
-            <span slot="title">ksbe</span>
+            <template slot="title">
+                <i class="el-icon-chat-round"></i>
+                <span slot="title">Ksbe</span>
+            </template>
+            <el-menu-item index="2-1">
+                <i class="el-icon-shopping-cart-2"></i>
+            </el-menu-item>
+            <el-menu-item index="2-2">
+                <i class="el-icon-present"></i>
+            </el-menu-item>
        </el-submenu>
      </el-menu>
  </div>

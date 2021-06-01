@@ -6,7 +6,9 @@
             </el-aside>
             
             <el-container>
-                <el-header>header</el-header>
+                <el-header>
+                    <navigation-bar></navigation-bar>
+                </el-header>
                 <el-main>
                     <collection-view></collection-view>
                 </el-main>
@@ -19,18 +21,19 @@
 <script>
 
 const NavMenu = () => import("../src/views/NavMenu")
-const CollectionView = () => import("../src/views/CollectionView") 
+const CollectionView = () => import("../src/views/CollectionView")
+const NavigationBar = () => import("../src/views/NavigationBar") 
 export default {
     name: "app",
     components: {
-        NavMenu,CollectionView
+        NavMenu,CollectionView,NavigationBar
     }
 }
 </script>
 
 <style>
 .el-header {
-    background-color: #B3C0D1
+    background-color: #B3C0D1;
 }
 
 .el-aside {

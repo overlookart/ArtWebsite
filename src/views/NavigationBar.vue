@@ -8,29 +8,30 @@
 * 代码版权方：'政府采购信息网'
 -->
 <template>
- <div class="collection">
-     <el-row v-for="item in collection.rowCount" :key="item" :gutter="10">
-       <el-col v-for="item in collection.colCount" :key="item" :span="24 / collection.colCount">
-           <el-card class="card_style"></el-card>
+ <div class="base_style">
+     <el-row type="flex" justify="end" style="background-color: #f9fafc" class="base_style">
+       <el-col :span="2">
+           123
+       </el-col>
+       <el-col :span="2">
+           <user-head-menu></user-head-menu>
        </el-col>
      </el-row>
  </div>
 </template>
  
 <script>
+
 // 这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 // 例如：import 《组件名称》 from '《组件路径》';
+const UserHeadMenu = () => import("../views/components/UserHeadMenu")
 export default {
-    components: {},
+    components: {
+        UserHeadMenu
+    },
     data () {
       return {
-        collection: {
-            colCount: 2,
-            rowCount: 2,
-        },
-        datasource: [
-
-        ],
+        
       }
     },
 // 监听属性 类似于data概念
@@ -60,16 +61,16 @@ export default {
 </script>
  
 <style >
-.collection{
-    width: 800px;
+/* @import url(); 引入公共css类*/
+.base_style {
+    width: 100%;
+
 }
-.el-row {
-    margin-bottom: 20px;
-}:last-child{/*最后一个元素的样式*/
-    margin-bottom: 0;
+.test_style {
+    background-color: cadetblue;
+    right: 0px;
 }
-.card_style {
-    width: 380px;
-    height: 260px;
-}
+.parent{display:flex;}
+.child{margin:0 auto;}
+
 </style>

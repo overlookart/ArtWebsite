@@ -7,7 +7,9 @@
             
             <el-container>
                 <el-header>header</el-header>
-                <el-main>main</el-main>
+                <el-main>
+                    <collection-view></collection-view>
+                </el-main>
                 <el-footer>footer</el-footer>
             </el-container>
         </el-container>
@@ -17,10 +19,11 @@
 <script>
 
 const NavMenu = () => import("../src/views/NavMenu")
+const CollectionView = () => import("../src/views/CollectionView") 
 export default {
     name: "app",
     components: {
-        NavMenu
+        NavMenu,CollectionView
     }
 }
 </script>

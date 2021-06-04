@@ -60,7 +60,11 @@ export default {
 };
 </script>
  
-<style >
+//当 style 标签有 scoped 属性时，它的 CSS 只作用于当前组件中的元素
+//使用 scoped 后，父组件的样式将不会渗透到子组件中。
+//不过一个子组件的根节点会同时受其父组件的 scoped CSS 和子组件的 scoped CSS 的影响。
+//这样设计是为了让父组件可以从布局的角度出发，调整其子组件根元素的样式
+<style scoped>
 /* @import url(); 引入公共css类*/
 .base_style {
     width: 100%;

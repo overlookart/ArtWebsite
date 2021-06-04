@@ -9,6 +9,7 @@
 -->
 <template>
  <div class="">
+     <!--导航菜单-->
      <el-menu 
      mode="vertical"
      background-color="#ffffff"
@@ -20,6 +21,7 @@
      @close="closeMenuAction"
      @select="selectMenuAction"
      >
+     
        <el-submenu index="1">
             <template slot="title">
                 <i class="el-icon-menu"></i>

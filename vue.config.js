@@ -48,6 +48,59 @@
 
     devServer: {
         proxy: "http://localhost:8081"
-    }
+    },
+
+
+    // chainWebpack: (config) => {
+    //     config.module
+    //         .rule()
+    //         .test(/\.s(c|a)ss$/)
+    //         .use("vue-style-loader")
+    //         .use("css-loader")
+    //         .loader("sass-loader")
+    //         .options({
+    //             implementation: require('sass'),
+    //         })
+    //         .sassOptions({
+    //             indentedSyntax: true
+    //         })
+    // },
+    // module: {
+    //     rules: [
+    //         {
+    //             test: /\.s(c|a)ss$/,
+    //             use: [
+    //                 'vue-style-loader',
+    //                 'css-loader',
+    //                 {
+    //                     loader: 'sass-loader',
+    //                     // Requires sass-loader@^7.0.0
+    //                     // options: {
+    //                     //     implementation: require('sass'),
+    //                     //     indentedSyntax: true // optional
+    //                     // },
+    //                     // Requires >= sass-loader@^8.0.0
+    //                     options: {
+    //                         implementation: require('sass'),
+    //                         sassOptions: {
+    //                             indentedSyntax: true // optional
+    //                         },
+    //                     },
+    //                 },
+    //             ],
+    //         },
+    //     ],
+    // }
 
 }
+
+//导入 webpack-chain 模块, 该模块导出一个用于创建一个webpack配置api的单一构造函数
+// const Config = require("webpack-chain");
+//对单一的构造函数创建一个新的配置实例
+// const config = new Config();
+
+//用链式api改变配置
+//每个api的调用会跟踪对存储配置的更改
+
+// config
+//     .entry()

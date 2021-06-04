@@ -5,11 +5,11 @@
 * @LastEditors: xzh
 * @Description: 组件描述
 * @FilePath: /文件路径.vue
-* 代码版权方：'政府采购信息网'
+* 代码版权方：'xzh'
 -->
 <template>
- <div class="">
-     <el-dropdown class="test_style">
+ <div class="base_style">
+     <el-dropdown>
          <div>
             <el-avatar icon="el-icon-user-solid"></el-avatar>
             <i class="el-icon-arrow-down child"></i>
@@ -57,6 +57,10 @@ export default {
 };
 </script>
  
-<style>
-
+<style scoped>
+.base_style {
+    background-color: cadetblue;
+    display: block;
+    float: right;
+}
 </style>

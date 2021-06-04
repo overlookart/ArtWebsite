@@ -9,14 +9,7 @@
 -->
 <template>
  <div class="base_style">
-     <el-row type="flex" justify="end" style="background-color: #f9fafc" class="base_style">
-       <el-col :span="2">
-           123
-       </el-col>
-       <el-col :span="2">
-           <user-head-menu></user-head-menu>
-       </el-col>
-     </el-row>
+     <user-head-menu></user-head-menu>
  </div>
 </template>
  
@@ -67,14 +60,11 @@ export default {
 <style scoped>
 /* @import url(); 引入公共css类*/
 .base_style {
-    width: 100%;
-
+    background-color: darkslategray;
+    overflow-x: auto;
 }
 .test_style {
     background-color: cadetblue;
     right: 0px;
 }
-.parent{display:flex;}
-.child{margin:0 auto;}
-
 </style>

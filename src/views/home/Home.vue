@@ -10,8 +10,8 @@
 <template>
  <div class="">
      <el-container>
-            <el-aside width="200px">
-                <nav-menu></nav-menu>
+            <el-aside :width="selfwidth + 'px'">
+                <nav-menu ref="nav_menu" v-on:updateSelfWidth="updateSelfWidth"></nav-menu>
             </el-aside>
             <el-container>
                 <el-header>
@@ -19,8 +19,9 @@
                 </el-header>
                 <el-main>
                     <collection-view></collection-view>
+                    <el-button type="" @click="testAction">test</el-button>
                 </el-main>
-                <el-footer>footer</el-footer>
+                <el-footer >footer</el-footer>
             </el-container>
         </el-container>
  </div>
@@ -36,20 +37,40 @@ export default {
     components: {NavMenu,CollectionView,NavigationBar},
     data () {
       return {
-        
+        selfwidth: 200,
       }
     },
 // 监听属性 类似于data概念
     computed: {}, 
 // 监控data中的数据变化
-    watch: {},
+    watch: {
+        
+    },
 // 方法集合
-    methods: {},
+    methods: {
+        testAction(){
+            var nav_menudata = this.$refs.nav_menu.data;
+            console.log(nav_menudata);
+        },
+        updateSelfWidth(){
+            var nav_menudata = this.$refs.nav_menu._data;
+            if(nav_menudata.menuIsFold){
+                this.selfwidth = 60;
+            }else{
+                this.selfwidth = 200;
+            }
+        }
+        
+    },
 /*------生命周期-------*/
 //创建完成（可以访问当前this实例）
-    created() {},
+    created() {
+        
+    },
 //挂载完成（可以访问DOM元素）
-    mounted() {},
+    mounted() {
+        
+    },
 //创建之前
     beforeCreate() {},
 //挂载之前

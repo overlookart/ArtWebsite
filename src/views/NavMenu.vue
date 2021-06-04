@@ -8,7 +8,8 @@
 * 代码版权方：'政府采购信息网'
 -->
 <template>
- <div class="">
+ <div>
+     
      <!--导航菜单-->
      <el-menu 
      mode="vertical"
@@ -17,11 +18,14 @@
      active-text-color="#409EFF"
      default-active="1"
      class="el-menu-vertical-demo"
+     :collapse="menuIsFold"
      @open="openMenuAction"
      @close="closeMenuAction"
      @select="selectMenuAction"
      >
-     
+        <div>
+            <el-button class="base_style" type="" icon="el-icon-s-fold" size="small" circle @click="foldMenuAction"></el-button>
+        </div>
        <el-submenu index="1">
             <template slot="title">
                 <i class="el-icon-menu"></i>
@@ -56,13 +60,15 @@
 export default {
     components: {},
     data () {
-      return {
-        menus: [
-            {
+        return {
+            //菜单是否折叠
+            menuIsFold: false,
+            menus: [
+                {
 
-            }
-        ]
-      }
+                }
+            ]
+        }
     },
 // 监听属性 类似于data概念
     computed: {}, 
@@ -70,6 +76,13 @@ export default {
     watch: {},
 // 方法集合
     methods: {
+        /**
+         * 折叠菜单按钮事件
+         */
+        foldMenuAction(){
+            this.menuIsFold = !this.menuIsFold;
+            this.$emit("updateSelfWidth");
+        },
         openMenuAction(key, keyPath){
             console.log("打开菜单",key, keyPath);
         },
@@ -103,8 +116,12 @@ export default {
 </script>
  
 <style scoped>
+.base_style{
+    
+    font-size: 25px;
+    
+}
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
-    min-height: 400px;
   }
 </style>

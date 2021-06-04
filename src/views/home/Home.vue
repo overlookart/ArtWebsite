@@ -66,8 +66,14 @@ export default {
 </script>
  
 <style scoped>
+/* .el-container {
+    background-color: deeppink;
+} */
+
 .el-header {
     background-color: #B3C0D1;
+    /** 取消 el-header 自带的20px 内边距 */
+    padding: 0px;
 }
 
 .el-aside {
@@ -79,5 +85,10 @@ export default {
 .el-main {
     text-align: center;
     background-color: darkseagreen;
+}
+
+.el-footer{
+    /** 取消 el-header 自带的20px 内边距 */
+    padding: 0px;
 }
 </style>

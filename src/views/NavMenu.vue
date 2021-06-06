@@ -8,7 +8,7 @@
 * 代码版权方：'政府采购信息网'
 -->
 <template>
- <div>
+ <div class="animate__animated animate__bounce">
      
      <!--导航菜单-->
      <el-menu 
@@ -49,6 +49,11 @@
             <el-menu-item index="2-2">
                 <i class="el-icon-present"></i>
             </el-menu-item>
+       </el-submenu>
+       <el-submenu index="3">
+           <template slot="title">
+               <span slot>Animate</span>
+           </template>
        </el-submenu>
      </el-menu>
  </div>

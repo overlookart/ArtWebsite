@@ -33,6 +33,7 @@
 const NavMenu = () => import("../NavMenu")
 const CollectionView = () => import("../CollectionView")
 const NavigationBar = () => import("../NavigationBar") 
+
 export default {
     components: {NavMenu,CollectionView,NavigationBar},
     data () {
@@ -86,7 +87,9 @@ export default {
 };
 </script>
  
+
 <style scoped>
+
 /* .el-container {
     background-color: deeppink;
 } */

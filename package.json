@@ -4,6 +4,7 @@
   "description": "art",
   "main": "index.js",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "core-js": "^3.11.3",
     "element-ui": "^2.15.2",
     "stylus": "^0.54.8",

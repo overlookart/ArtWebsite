@@ -5,10 +5,10 @@
 * @LastEditors: xzh
 * @Description: 组件描述
 * @FilePath: /文件路径.vue
-* 代码版权方：'政府采购信息网'
+* 代码版权方：'xzh'
 -->
 <template>
- <div class="animate__animated animate__bounce">
+ <div class="base_style animate__animated animate__bounce">
      
      <!--导航菜单-->
      <el-menu 
@@ -24,7 +24,7 @@
      @select="selectMenuAction"
      >
         <div>
-            <el-button class="base_style" type="" icon="el-icon-s-fold" size="small" circle @click="foldMenuAction"></el-button>
+            <el-button class="menu_size" type="" icon="el-icon-s-fold" size="small" circle @click="foldMenuAction"></el-button>
         </div>
        <el-submenu index="1">
             <template slot="title">
@@ -122,9 +122,11 @@ export default {
  
 <style scoped>
 .base_style{
-    
+    animation-delay: 2s;
+    animation-direction: 2s;
+}
+.menu_size {
     font-size: 25px;
-    
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;

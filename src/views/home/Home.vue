@@ -50,8 +50,15 @@ export default {
 // 方法集合
     methods: {
         testAction(){
-            var nav_menudata = this.$refs.nav_menu.data;
-            console.log(nav_menudata);
+            //this.$store 获取全局状态信息 commit("方法名") 调用store的方法
+            // this.$store.commit("increment", 10);
+            // this.$store.commit("increment", {con: 10});
+            //分发 store actions
+            this.$store.dispatch("increment");
+            console.log("store.state",this.$store.state.count);
+            console.log("store.getters",this.$store.getters.doCount);
+            
+
         },
         updateSelfWidth(){
             var nav_menudata = this.$refs.nav_menu._data;

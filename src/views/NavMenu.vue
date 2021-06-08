@@ -154,6 +154,21 @@ export default {
                             icon: "",
                         },
                     ]
+                },{
+                    index: "4",
+                    title: "store",
+                    icon: "",
+                    items: [
+                        {
+                            index: "4-1",
+                            title: "test",
+                            icon: "",
+                        },{
+                            index: "4-2",
+                            title: "user",
+                            icon: "",
+                        },
+                    ]
                 }
             ]
         }
@@ -190,6 +205,8 @@ export default {
             console.log(item);
             if (menu.index === "3") {
                 this.$router.push("animate");
+            } else if (menu.index === "4") {
+                this.$router.push("store");
             }
         }
     },

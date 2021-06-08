@@ -20,6 +20,10 @@ export default [
                 path: "/animate",
                 name: "animate",
                 component: () => import("@/views/animate/Index.vue")
+            },{
+                path: "/store",
+                name: "store",
+                component: () => import("@/views/store/Index.vue")
             }
             
         ],

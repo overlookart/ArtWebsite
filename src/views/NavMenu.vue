@@ -26,35 +26,19 @@
         <div>
             <el-button class="menu_size" type="" icon="el-icon-s-fold" size="small" circle @click="foldMenuAction"></el-button>
         </div>
-       <el-submenu index="1">
+        <!-- v-for 遍历菜单数据，生成菜单 -->
+        <component v-for="menu in menus" :key="menu.index" :index="menu.index" :is="(menu.items && menu.items.length > 0) ? 'el-submenu' : 'el-menu-item'">
             <template slot="title">
-                <i class="el-icon-menu"></i>
-                <span>Menu</span>
+                <i :class="menu.icon"></i>
+                <span>{{menu.title}}</span>
             </template>
-            <el-menu-item index="1-1">
-                <i class="el-icon-shopping-cart-2"></i>
-            </el-menu-item>
-            <el-menu-item index="1-2">
-                <i class="el-icon-present"></i>
-            </el-menu-item>
-       </el-submenu>
-       <el-submenu index="2">
-            <template slot="title">
-                <i class="el-icon-chat-round"></i>
-                <span slot="title">Ksbe</span>
+            <template v-if="menu.items && menu.items.length > 0">
+                <el-menu-item v-for="item in menu.items" :key="item.index" :index="item.index">
+                    <i :class="item.icon"></i>
+                    <span>{{item.title}}</span>
+                </el-menu-item>
             </template>
-            <el-menu-item index="2-1">
-                <i class="el-icon-shopping-cart-2"></i>
-            </el-menu-item>
-            <el-menu-item index="2-2">
-                <i class="el-icon-present"></i>
-            </el-menu-item>
-       </el-submenu>
-       <el-submenu index="3">
-           <template slot="title">
-               <span slot>Animate</span>
-           </template>
-       </el-submenu>
+        </component>
      </el-menu>
  </div>
 </template>
@@ -70,7 +54,40 @@ export default {
             menuIsFold: false,
             menus: [
                 {
-
+                    index: "1",
+                    title: "Menu",
+                    icon: "el-icon-menu",
+                    items: [
+                        {
+                            index: "1-1",
+                            title: "",
+                            icon: "el-icon-shopping-cart-2",
+                        },{
+                            index: "1-2",
+                            title: "",
+                            icon: "el-icon-present",
+                        },
+                    ]
+                },{
+                    index: "2",
+                    title: "Ksbe",
+                    icon: "el-icon-chat-round",
+                    items: [
+                        {
+                            index: "2-1",
+                            title: "",
+                            icon: "el-icon-shopping-cart-2",
+                        },{
+                            index: "2-2",
+                            title: "",
+                            icon: "el-icon-present",
+                        },
+                    ]
+                },{
+                    index: "3",
+                    title: "Animation",
+                    icon: "",
+                    items: []
                 }
             ]
         }

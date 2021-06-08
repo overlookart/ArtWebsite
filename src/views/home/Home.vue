@@ -9,36 +9,22 @@
 -->
 <template>
  <div class="">
-     <el-container>
-            <el-aside :width="selfwidth + 'px'">
-                <nav-menu ref="nav_menu" v-on:updateSelfWidth="updateSelfWidth"></nav-menu>
-            </el-aside>
-            <el-container>
-                <el-header>
-                    <navigation-bar></navigation-bar>
-                </el-header>
-                <el-main>
-                    <collection-view></collection-view>
-                    <el-button type="" @click="testAction">test</el-button>
-                </el-main>
-                <el-footer >footer</el-footer>
-            </el-container>
-        </el-container>
+    <collection-view></collection-view>
+    <el-button type="" @click="testAction">test</el-button>        
  </div>
 </template>
  
 <script>
 // 这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 // 例如：import 《组件名称》 from '《组件路径》';
-const NavMenu = () => import("../NavMenu")
+
 const CollectionView = () => import("../CollectionView")
-const NavigationBar = () => import("../NavigationBar") 
 
 export default {
-    components: {NavMenu,CollectionView,NavigationBar},
+    components: {CollectionView},
     data () {
       return {
-        selfwidth: 200,
+        
       }
     },
 // 监听属性 类似于data概念
@@ -60,15 +46,6 @@ export default {
             
 
         },
-        updateSelfWidth(){
-            var nav_menudata = this.$refs.nav_menu._data;
-            if(nav_menudata.menuIsFold){
-                this.selfwidth = 60;
-            }else{
-                this.selfwidth = 200;
-            }
-        }
-        
     },
 /*------生命周期-------*/
 //创建完成（可以访问当前this实例）
@@ -101,25 +78,5 @@ export default {
     background-color: deeppink;
 } */
 
-.el-header {
-    background-color: #B3C0D1;
-    /** 取消 el-header 自带的20px 内边距 */
-    padding: 0px;
-}
 
-.el-aside {
-    background-color: cadetblue;
-    text-align: center;
-    line-height: 60px;
-}
-
-.el-main {
-    text-align: center;
-    background-color: darkseagreen;
-}
-
-.el-footer{
-    /** 取消 el-header 自带的20px 内边距 */
-    padding: 0px;
-}
 </style>

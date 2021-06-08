@@ -9,13 +9,13 @@
 -->
 <template>
  <div class="base_style">
-     <el-dropdown>
+     <el-dropdown @command="handleCommand">
          <div>
             <el-avatar icon="el-icon-user-solid"></el-avatar>
             <i class="el-icon-arrow-down child"></i>
          </div>
         <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>个人中心</el-dropdown-item>
+            <el-dropdown-item command="个人中心">个人中心</el-dropdown-item>
         </el-dropdown-menu>
      </el-dropdown>
  </div>
@@ -36,7 +36,15 @@ export default {
 // 监控data中的数据变化
     watch: {},
 // 方法集合
-    methods: {},
+    methods: {
+        handleCommand(com) {
+            console.log("下拉菜单",com);
+            //路由导航
+            //字符串
+            this.$router.push("user");
+            this.$router.push({name: "user"});
+        }
+    },
 /*------生命周期-------*/
 //创建完成（可以访问当前this实例）
     created() {},

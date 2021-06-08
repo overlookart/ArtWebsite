@@ -5,7 +5,7 @@
 * @LastEditors: xzh
 * @Description: 组件描述
 * @FilePath: /文件路径.vue
-* 代码版权方：'政府采购信息网'
+* 代码版权方：'xzh'
 -->
 <template>
  <div class="collection">
@@ -22,6 +22,7 @@
 // 例如：import 《组件名称》 from '《组件路径》';
 export default {
     components: {},
+    props: [],
     data () {
       return {
         collection: {

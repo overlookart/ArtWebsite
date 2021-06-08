@@ -16,7 +16,11 @@ export default [
                 path: "/home",
                 name: "home",
                 component: () => import("@/views/home/Home.vue")
-            },
+            },{
+                path: "/animate",
+                name: "animate",
+                component: () => import("@/views/animate/Index.vue")
+            }
             
         ],
     }

@@ -87,7 +87,73 @@ export default {
                     index: "3",
                     title: "Animation",
                     icon: "",
-                    items: []
+                    items: [
+                        {
+                            index: "3-1",
+                            title: "Attention seekers",
+                            icon: "",
+                        },{
+                            index: "3-2",
+                            title: "Back entrabces",
+                            icon: "",
+                        },{
+                            index: "3-3",
+                            title: "Back exits",
+                            icon: "",
+                        },{
+                            index: "3-4",
+                            title: "Bouncing entrances",
+                            icon: "",
+                        },{
+                            index: "3-5",
+                            title: "Bouncing exits",
+                            icon: "",
+                        },{
+                            index: "3-6",
+                            title: "Fading entrances",
+                            icon: "",
+                        },{
+                            index: "3-7",
+                            title: "Fading exits",
+                            icon: "",
+                        },{
+                            index: "3-8",
+                            title: "Flippers",
+                            icon: "",
+                        },{
+                            index: "3-9",
+                            title: "Lightspeed",
+                            icon: "",
+                        },{
+                            index: "3-10",
+                            title: "Rotating entrances",
+                            icon: "",
+                        },{
+                            index: "3-11",
+                            title: "Rotating exits",
+                            icon: "",
+                        },{
+                            index: "3-12",
+                            title: "Specials",
+                            icon: "",
+                        },{
+                            index: "3-13",
+                            title: "Zooming entrances",
+                            icon: "",
+                        },{
+                            index: "3-14",
+                            title: "Zooming exits",
+                            icon: "",
+                        },{
+                            index: "3-15",
+                            title: "Sliding entrances",
+                            icon: "",
+                        },{
+                            index: "3-16",
+                            title: "Sliding exits",
+                            icon: "",
+                        },
+                    ]
                 }
             ]
         }
@@ -106,15 +172,25 @@ export default {
             this.$emit("updateSelfWidth");
         },
         openMenuAction(key, keyPath){
-            console.log("打开菜单",key, keyPath);
+            console.log("打开菜单",key, "/", keyPath);
         },
 
         closeMenuAction(key, keyPath){
-            console.log("关闭菜单",key, keyPath);
+            console.log("关闭菜单",key, "/", keyPath);
         },
 
         selectMenuAction(key, keyPath){
-            console.log("选中菜单",key, keyPath);
+            console.log("选中菜单",key, "/", keyPath);
+            var menu = this.menus.find((m) => {
+                return m.index === keyPath[0];
+            })
+            var item = menu.items.find((ite) => {
+                return ite.index === keyPath[1];
+            })
+            console.log(item);
+            if (menu.index === "3") {
+                this.$router.push("animate");
+            }
         }
     },
 /*------生命周期-------*/

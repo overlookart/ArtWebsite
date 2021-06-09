@@ -5,11 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "animate.css": "^4.1.1",
+    "axios": "^0.21.1",
     "core-js": "^3.11.3",
     "element-ui": "^2.15.2",
     "stylus": "^0.54.8",
     "stylus-loader": "^6.0.0",
     "vue": "^2.6.12",
+    "vue-axios": "^3.2.4",
     "vue-router": "^3.5.1",
     "vuetify": "^2.5.2",
     "vuex": "^3.6.2"

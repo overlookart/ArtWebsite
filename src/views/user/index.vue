@@ -32,9 +32,16 @@ export default {
     methods: {},
 /*------生命周期-------*/
 //创建完成（可以访问当前this实例）
-    created() {},
+    created() {
+        console.log("user 创建完成");
+    },
 //挂载完成（可以访问DOM元素）
-    mounted() {},
+    mounted() {
+        //判断用户是否登录
+
+        //未登录 进入登录页面
+        this.$router.push({name:"login"});
+    },
 //创建之前
     beforeCreate() {},
 //挂载之前

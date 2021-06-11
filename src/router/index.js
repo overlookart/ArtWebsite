@@ -18,4 +18,21 @@ const router = new VueRouter({
     routes
 });
 
+
+//解决 Navigation cancelled from "xxx" to "xxx" with a new navigation. 报错的问题
+const originalPush = VueRouter.prototype.push;
+const originalReplace = VueRouter.prototype.replace;
+//push
+VueRouter.prototype.push = function push(location, onResolve, onReject) {
+    if (onResolve || onReject)
+      return originalPush.call(this, location, onResolve, onReject);
+    return originalPush.call(this, location).catch(err => err);
+  };
+  //replace
+VueRouter.prototype.replace = function push(location, onResolve, onReject) {
+    if (onResolve || onReject)
+    return originalReplace.call(this, location, onResolve, onReject);
+    return originalReplace.call(this, location).catch(err => err);
+};
+
 export default router

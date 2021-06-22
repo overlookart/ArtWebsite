@@ -27,5 +27,9 @@ export default [
             }
             
         ],
+    },{
+        path: "/share",
+        name: "share",
+        component: () => import("@/views/share/Index.vue")
     }
 ]

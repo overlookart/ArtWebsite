@@ -51,7 +51,7 @@ export default {
     data () {
         return {
             //菜单是否折叠
-            menuIsFold: false,
+            menuIsFold: true,
             menus: [
                 {
                     index: "1",
@@ -169,6 +169,17 @@ export default {
                             icon: "",
                         },
                     ]
+                },{
+                    index: "5",
+                    title: "share",
+                    icon: "el-icon-s-promotion",
+                    items: [
+                        {
+                            index: "5-1",
+                            title: "share",
+                            icon: ""
+                        }
+                    ]
                 }
             ]
         }
@@ -207,7 +218,10 @@ export default {
                 this.$router.push("animate");
             } else if (menu.index === "4") {
                 this.$router.push("store");
+            } else if (menu.index === "5"){
+                this.$router.push("share");
             }
+
         }
     },
 /*------生命周期-------*/

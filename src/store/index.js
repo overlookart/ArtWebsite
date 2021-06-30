@@ -1,6 +1,4 @@
-import Vue from "vue"
-import Vuex from "vuex"
-Vue.use(Vuex);
+import { createStore } from "vuex"
 
 const rootModule = {
     state: {},
@@ -24,6 +22,6 @@ files.keys().forEach((key, index) => {
 /**
  * 将 store 分割成模块（module）
  */
-const store = new Vuex.Store(rootModule);
+const store = createStore(rootModule);
 
 export default store;

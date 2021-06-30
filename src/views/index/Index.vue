@@ -8,7 +8,8 @@
 * 代码版权方：'xzh'
 -->
 <template>
- <div class="">
+<!-- vue 2.0 -->
+ <!-- <div class="">
      <el-container>
             <el-aside :width="selfwidth + 'px'">
                 <nav-menu ref="nav_menu" v-on:updateSelfWidth="updateSelfWidth"></nav-menu>
@@ -23,7 +24,16 @@
                 <el-footer >footer</el-footer>
             </el-container>
         </el-container>
- </div>
+    
+ </div> -->
+    <n-layout has-sider>
+        <n-layout-sider >主菜单</n-layout-sider>
+        <n-layout>
+            <n-layout-header>header</n-layout-header>
+            <n-layout-content>content</n-layout-content>
+            <n-layout-footer>footer</n-layout-footer>
+        </n-layout>
+    </n-layout>
 </template>
  
 <script>

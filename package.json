@@ -16,6 +16,15 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@vicons/antd": "^0.10.0",
+    "@vicons/carbon": "^0.10.0",
+    "@vicons/fa": "^0.10.0",
+    "@vicons/fluent": "^0.10.0",
+    "@vicons/ionicons4": "^0.10.0",
+    "@vicons/ionicons5": "^0.10.0",
+    "@vicons/material": "^0.10.0",
+    "@vicons/tabler": "^0.10.0",
+    "@vicons/utils": "^0.1.4",
     "@vue/cli-plugin-babel": "^3.8.0",
     "deepmerge": "^4.2.2",
     "naive-ui": "^2.14.0",

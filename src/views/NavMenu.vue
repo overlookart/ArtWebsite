@@ -14,7 +14,10 @@
 <script>
 // 这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 // 例如：import 《组件名称》 from '《组件路径》';
-module.exports = {
+
+import { BookOutline as BookIcon} from '@vicons/ionicons5';
+import { RNIcon } from '../plugins/NaivePlus'
+export default {
     components: {},
     data () {
         return {
@@ -24,7 +27,7 @@ module.exports = {
                 {   
                     label: "Menu",
                     key: "1",
-                    icon: "",
+                    icon: RNIcon(BookIcon),
                     children: [
                         {
                             key: "1-1",

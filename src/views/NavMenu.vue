@@ -8,177 +8,33 @@
 * 代码版权方：'xzh'
 -->
 <template>
- <div class="base_style animate__animated animate__bounce">
-     
-     <!--导航菜单-->
-     <el-menu 
-     mode="vertical"
-     background-color="#ffffff"
-     text-color="#303133"
-     active-text-color="#409EFF"
-     default-active="1"
-     class="el-menu-vertical-demo"
-     :collapse="menuIsFold"
-     @open="openMenuAction"
-     @close="closeMenuAction"
-     @select="selectMenuAction"
-     >
-        <div>
-            <el-button class="menu_size" type="" icon="el-icon-s-fold" size="small" circle @click="foldMenuAction"></el-button>
-        </div>
-        <!-- v-for 遍历菜单数据，生成菜单 -->
-        <component v-for="menu in menus" :key="menu.index" :index="menu.index" :is="(menu.items && menu.items.length > 0) ? 'el-submenu' : 'el-menu-item'">
-            <template slot="title">
-                <i :class="menu.icon"></i>
-                <span>{{menu.title}}</span>
-            </template>
-            <template v-if="menu.items && menu.items.length > 0">
-                <el-menu-item v-for="item in menu.items" :key="item.index" :index="item.index">
-                    <i :class="item.icon"></i>
-                    <span>{{item.title}}</span>
-                </el-menu-item>
-            </template>
-        </component>
-     </el-menu>
- </div>
+<n-menu @update:value="handleUpdateValue" :options="menus"></n-menu>
 </template>
  
 <script>
 // 这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 // 例如：import 《组件名称》 from '《组件路径》';
-export default {
+module.exports = {
     components: {},
     data () {
         return {
             //菜单是否折叠
             menuIsFold: true,
             menus: [
-                {
-                    index: "1",
-                    title: "Menu",
-                    icon: "el-icon-menu",
-                    items: [
-                        {
-                            index: "1-1",
-                            title: "",
-                            icon: "el-icon-shopping-cart-2",
-                        },{
-                            index: "1-2",
-                            title: "",
-                            icon: "el-icon-present",
-                        },
-                    ]
-                },{
-                    index: "2",
-                    title: "Ksbe",
-                    icon: "el-icon-chat-round",
-                    items: [
-                        {
-                            index: "2-1",
-                            title: "",
-                            icon: "el-icon-shopping-cart-2",
-                        },{
-                            index: "2-2",
-                            title: "",
-                            icon: "el-icon-present",
-                        },
-                    ]
-                },{
-                    index: "3",
-                    title: "Animation",
+                {   
+                    label: "Menu",
+                    key: "1",
                     icon: "",
-                    items: [
+                    children: [
                         {
-                            index: "3-1",
-                            title: "Attention seekers",
+                            key: "1-1",
+                            label: "Menu1",
                             icon: "",
                         },{
-                            index: "3-2",
-                            title: "Back entrabces",
-                            icon: "",
-                        },{
-                            index: "3-3",
-                            title: "Back exits",
-                            icon: "",
-                        },{
-                            index: "3-4",
-                            title: "Bouncing entrances",
-                            icon: "",
-                        },{
-                            index: "3-5",
-                            title: "Bouncing exits",
-                            icon: "",
-                        },{
-                            index: "3-6",
-                            title: "Fading entrances",
-                            icon: "",
-                        },{
-                            index: "3-7",
-                            title: "Fading exits",
-                            icon: "",
-                        },{
-                            index: "3-8",
-                            title: "Flippers",
-                            icon: "",
-                        },{
-                            index: "3-9",
-                            title: "Lightspeed",
-                            icon: "",
-                        },{
-                            index: "3-10",
-                            title: "Rotating entrances",
-                            icon: "",
-                        },{
-                            index: "3-11",
-                            title: "Rotating exits",
-                            icon: "",
-                        },{
-                            index: "3-12",
-                            title: "Specials",
-                            icon: "",
-                        },{
-                            index: "3-13",
-                            title: "Zooming entrances",
-                            icon: "",
-                        },{
-                            index: "3-14",
-                            title: "Zooming exits",
-                            icon: "",
-                        },{
-                            index: "3-15",
-                            title: "Sliding entrances",
-                            icon: "",
-                        },{
-                            index: "3-16",
-                            title: "Sliding exits",
+                            key: "1-2",
+                            label: "Menu2",
                             icon: "",
                         },
-                    ]
-                },{
-                    index: "4",
-                    title: "store",
-                    icon: "",
-                    items: [
-                        {
-                            index: "4-1",
-                            title: "test",
-                            icon: "",
-                        },{
-                            index: "4-2",
-                            title: "user",
-                            icon: "",
-                        },
-                    ]
-                },{
-                    index: "5",
-                    title: "share",
-                    icon: "el-icon-s-promotion",
-                    items: [
-                        {
-                            index: "5-1",
-                            title: "share",
-                            icon: ""
-                        }
                     ]
                 }
             ]
@@ -222,6 +78,10 @@ export default {
                 this.$router.push("share");
             }
 
+        },
+        handleUpdateValue (key, item) {
+            console.log('[onUpdate:value]: ' + JSON.stringify(key));
+            console.log('[onUpdate:value]: ' + JSON.stringify(item));
         }
     },
 /*------生命周期-------*/
@@ -245,14 +105,5 @@ export default {
 </script>
  
 <style scoped>
-.base_style{
-    animation-delay: 2s;
-    animation-direction: 2s;
-}
-.menu_size {
-    font-size: 25px;
-}
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-  }
+
 </style>

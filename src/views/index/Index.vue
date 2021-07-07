@@ -9,7 +9,7 @@
 -->
 <template>
     <n-layout has-sider>
-        <n-layout-sider bordered>
+        <n-layout-sider bordered collapse-mode = "width" :collapsed-width="120" :width="200" show-trigger='arrow-circle'>
             <nav-menu></nav-menu>
         </n-layout-sider>
         <n-layout>

@@ -19,7 +19,7 @@ const router = createRouter({
 });
 
 
-//解决 Navigation cancelled from "xxx" to "xxx" with a new navigation. 报错的问题
+//解决 vue2.0 Navigation cancelled from "xxx" to "xxx" with a new navigation. 报错的问题
 //const originalPush = VueRouter.prototype.push;
 //const originalReplace = VueRouter.prototype.replace;
 //push
@@ -35,4 +35,7 @@ const router = createRouter({
 //     return originalReplace.call(this, location).catch(err => err);
 // };
 
-export default router
+function setupRouter(app) {
+  app.use(router);
+}
+export { setupRouter };

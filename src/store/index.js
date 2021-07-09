@@ -23,5 +23,7 @@ files.keys().forEach((key, index) => {
  * 将 store 分割成模块（module）
  */
 const store = createStore(rootModule);
-
-export default store;
+function setupStore(app) {
+    app.use(store);
+}
+export { setupStore };

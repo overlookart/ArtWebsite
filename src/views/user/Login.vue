@@ -8,87 +8,78 @@
 * 代码版权方：'xzh'
 -->
 <template>
- <div class="base_style">
-    <el-card class="login_card">
-        <el-form :model="logindata">
-          <el-form-item label="账号" >
-              <el-input :value="logindata.account" placeholder="请输入账号"></el-input>
-          </el-form-item>
-          <el-form-item label="密码">
-              <el-input :value="logindata.password" placeholder="请输入密码"></el-input>
-          </el-form-item>
-        </el-form>
-        <el-button type="" @click="loginAction">登录</el-button>
-    </el-card>
- </div>
+<div class="view-account">
+    <div class="view-account-header"></div>
+    <div class="view-account-container">
+        <div class="view-account-top">
+            <div class="view-account-top-logo">
+                <img src="~@/assets/img/account-logo.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 </template>
  
 <script>
 // 这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 // 例如：import 《组件名称》 from '《组件路径》';
+import { useMessage } from 'naive-ui';
+// reactive 是 Vue3 中提供的实现响应式数据的方法
+import { reactive } from '@vue/reactivity';
+
 export default {
     components: {},
-    props: [],
-    data () {
-        return {
-            logindata: {
-                account: "",
-                password: "",
+    setup() {
+        const formRef = ref();
+        const message = useMessage();
+
+        const state = reactive({
+            loading: false,
+            autoLogin: true,
+            formInline: {
+                username: 'admin',
+                password: '123456'
             }
-        }
-    },
-// 监听属性 类似于data概念
-    computed: {}, 
-// 监控data中的数据变化
-    watch: {},
-// 方法集合
-    methods: {
-        loginAction() {
-            console.log(this.logindata);
-        }
-    },
-/*------生命周期-------*/
-//创建完成（可以访问当前this实例）
-    created() {
-        console.log("login 创建完成");
-    },
-//挂载完成（可以访问DOM元素）
-    mounted() {
-        
-    },
-//创建之前
-    beforeCreate() {},
-//挂载之前
-    beforeMount() {},
-//更新之前
-    updated() {},
-//销毁之前
-    beforeDestroy() {},
-//销毁完成
-    destroyed() {},
-//如果页面有keep-alive缓存功能，这个函数会触发
-    activated() {},
+        });
+        const rulse = {
+            username: {required: true, message: '请输入用户名', trigger: 'blur'},
+            password: {required: true, message: '请输入密码!', trigger: 'blur'}
+        };
+    }
 };
 </script>
  
-<style  scoped>
-.base_style {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-.login_card{
-    width: 400px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    margin: 0 auto;
-    text-align: center;
-}
-.test_style {
-    width: 360px;
-    margin: 0 auto;
-    position: absolute;
+<style lang="less" scoped>
+.view-account {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+
+    &-container {
+        flex: 1;
+        padding: 32px 0;
+        width: 384px;
+        margin: 0 auto;
+    }
+
+    &-top {
+        padding: 32px 0;
+        text-align: center;
+
+        &-logo {
+            height: 75px;
+        }
+
+        &-desc {
+            font-size: 14px;
+            color: #808695;
+            margin-top: 20px;
+        }
+    }
+
+    &-other {
+        width: 100%;
+    }
 }
 </style>

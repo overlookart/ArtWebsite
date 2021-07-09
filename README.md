@@ -12,4 +12,8 @@ npm run serve
 ```
 npm run build
 ```
+### Compiles development service
+```
+npm run dev
+```
 

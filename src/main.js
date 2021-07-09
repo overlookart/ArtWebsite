@@ -1,7 +1,6 @@
 
 import { createApp } from "vue"
 import App from "./App.vue"
-import router from "./router"
 import { setupRouter } from "./router"
 import { setupNaive } from './plugins/NaivePlus'
 import { setupStore } from "./store"

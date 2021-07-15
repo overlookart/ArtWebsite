@@ -1,7 +1,7 @@
 
 import { createApp } from "vue"
 import App from "./App.vue"
-import { setupRouter } from "./router"
+import router, { setupRouter } from "./router"
 import { setupNaive } from './plugins/NaivePlus'
 import { setupStore } from "./store"
 //vue 2.0
@@ -18,4 +18,7 @@ const app = createApp(App);
 setupNaive(app);
 setupRouter(app);
 setupStore(app);
-const vm = app.mount("#app");
+// const vm = app.mount("#app");
+//路由准备就绪后挂载APP实例
+router.isReady().then(() => app.mount('#app'));
+console.log('main.js 执行完');

@@ -3,13 +3,17 @@
 </template>
 
 <script>
+import { defineComponent } from "vue";
 
 
-export default {
-    components: {
+
+export default defineComponent({
+    name: 'App',
+    components: { },
+    setup() {
         
     }
-}
+})
 </script>
 
 <style scoped>

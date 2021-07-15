@@ -23,10 +23,15 @@ export default defineConfig({
     publicDir: "./public",
     //存储缓存文件的目录。此目录下会存储预打包的依赖项或 vite 生成的某些缓存文件，使用缓存可以提高性能。如需重新生成缓存文件，你可以使用 --force 命令行选项或手动删除目录。此选项的值可以是文件的绝对路径，也可以是以项目根目录为基准的相对路径
     cacheDir: "./cache",
-    /*
+    
     resolve: {
         //当使用文件系统路径的别名时，请始终使用绝对路径。相对路径的别名值会原封不动地被使用，因此无法被正常解析
-        alias: "",
+        alias: [
+            {   // 可以通过 @ 符号 引入 src/ 目录下的文件
+                find: "@",
+                replacement: pathResolve('src') + '/'
+            }
+        ],
         //如果你在你的应用程序中有相同依赖的副本（比如 monorepos），请使用此选项强制 Vite 始终将列出的依赖项解析为同一副本（从项目根目录）
         dedupe: [],
         //解决程序包中 情景导出 时的其他允许条件。
@@ -35,7 +40,7 @@ export default defineConfig({
         // mainFields: ['module', 'jsnext:main', 'jsnext'],
         //导入时想要省略的扩展名列表。注意，不 建议忽略自定义导入类型的扩展名（例如：.vue），因为它会影响 IDE 和类型支持。
         // extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
-    },*/
+    },
     css: {
         //
         modules: "",

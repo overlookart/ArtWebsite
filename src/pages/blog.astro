@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 ---
 
@@ -11,14 +13,17 @@ import '../styles/global.css'
     <title>Astro</title>
   </head>
   <body>
-    <a href="/ArtWebsite/">首页</a>
-    <a href="/ArtWebsite/about/">关于</a>
+    <Header/>
     <h1>我的 Astro 学习博客</h1>
     <p>在这里，我将分享我的学习 Astro 之旅。</p>
     <ul>
         <li><a href="/ArtWebsite/posts/post-1/">文章 1</a></li>
         <li><a href="/ArtWebsite/posts/post-2/">文章 2</a></li>
         <li><a href="/ArtWebsite/posts/post-3/">文章 3</a></li>
-      </ul>
+    </ul>
+    <Footer/>
   </body>
+<script>
+	import '../scripts/menu.js'
+</script>
 </html>

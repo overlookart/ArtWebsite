@@ -18,7 +18,19 @@
 import { Menu, SpeedometerOutline, WaterOutline } from '@vicons/ionicons5';
 import { RNIcon } from '../plugins/NaivePlus'
 export default {
+    name: 'NavMenu',
     components: {},
+    props: {
+        //菜单模式
+        mode: {
+            type: String,
+            default: 'vertival'
+        },
+        //是否收起
+        collapsed: {
+            type: Boolean
+        }
+    },
     data () {
         return {
             //菜单是否折叠

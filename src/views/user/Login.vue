@@ -49,37 +49,33 @@ export default {
 };
 </script>
  
-<style lang="less" scoped>
+<style scoped>
 .view-account {
     display: flex;
     flex-direction: column;
     height: 100vh;
     overflow: auto;
+}
+.view-account-container {
+    flex: 1;
+    padding: 32px 0;
+    width: 384px;
+    margin: 0 auto;
+}
+.view-account-other {
+    width: 100%;
+}
+.view-account-top {
+    padding: 32px 0;
+    text-align: center;
+}
+.view-account-top-logo {
+    height: 75px;
+}
 
-    &-container {
-        flex: 1;
-        padding: 32px 0;
-        width: 384px;
-        margin: 0 auto;
-    }
-
-    &-top {
-        padding: 32px 0;
-        text-align: center;
-
-        &-logo {
-            height: 75px;
-        }
-
-        &-desc {
-            font-size: 14px;
-            color: #808695;
-            margin-top: 20px;
-        }
-    }
-
-    &-other {
-        width: 100%;
-    }
+.view-account-top-desc {
+    font-size: 14px;
+    color: #808695;
+    margin-top: 20px;
 }
 </style>

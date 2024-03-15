@@ -1,14 +1,19 @@
 import { defineDb, defineTable, column } from 'astro:db';
 
 // 定义数据库表
+const Author = defineTable({
+    columns: {
+        id: column.number({ primaryKey : true }),
+        name: column.text()
+    }
+})
+
+// 表的引用
 const Comment = defineTable({
     columns: {
-        author: column.text(),
-        body: column.text(),
-        likes: column.number(),
-        flagged: column.boolean(),
-        published: column.date(),
-        metadata: column.json(),
+        // authorId: column.number({ references: () => Author.columns.id }),
+        authorId: column.number(),
+        content: column.text(),
     }
 })
 

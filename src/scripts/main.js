@@ -1,0 +1,1 @@
+console.debug('加载主脚本')

@@ -9,5 +9,6 @@ export default defineConfig({
   site: 'https://overlookart.github.io',
   base: '/ArtWebsite',
   // 集成
-  integrations: [vue(), tailwind(), db()]
+  integrations: [vue({devtools: true}), tailwind(), db()],
+  renderers: ['@astrojs/renderer-vue'],
 });

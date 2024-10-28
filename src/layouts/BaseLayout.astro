@@ -1,39 +1,35 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Head from "../components/Astro/Head.astro";
+import Background from "../components/Astro/Background.astro";
+import Header from "../components/Astro/Header.astro";
+import Footer from "../components/Astro/Footer.astro";
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css'
 const { pageTitle } = Astro.props
 ---
-
+<!DOCTYPE html>
 <html lang="zh-cn">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
+    <Head />
     <body>
+        <Background />
+        <script type="module" src="/src/scripts/main.js"></script>
         <Header />
-        <h1>{pageTitle}</h1>
-        <slot />
-        <Footer />
-        <script>
-        import "../scripts/menu.js";
-        </script>
+        <div class="container mx-auto">
+            <div class="flex h-screen shadow-gray-600 py-4">
+                <div class="flex-none py-2 backdrop-blur-md bg-white/5 rounded-l-lg w-[215px]" style="box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);">
+                    <p>可被其他模版覆盖的左侧内容</p>
+                </div>
+                <div id="content" class="flex flex-col grow backdrop-blur-md bg-white/0 rounded-r-lg" style="box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.1);">
+                    <div class="overflow-scroll flex">
+                        <div class="grow">
+                            <slot></slot>
+                        </div>
+                        <div class="w-[215px] h-full mx-auto overflow-scroll">
+                            <p>请使用 block "rightSideBar" 定义右侧内容</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
-
-<style is:global>
-    :root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-</style>

@@ -4,7 +4,7 @@ import BlogPost from '../components/Astro/BlogPost.astro';
 import { db } from 'astro:db';
 import { Comment } from 'astro:db';
 
-const allPosts = await Astro.glob('../pages/posts/*.md');
+const allPosts = await Astro.glob('../pages/**/*.md');
 const pageTitle = '我的 Astro 学习博客'
 
 // 查询数据库

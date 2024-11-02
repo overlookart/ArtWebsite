@@ -1,6 +1,10 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+
+import { getEntry, render } from 'astro:content';
+const product = await getEntry('Astro', 'Start');
+
 ---
 <BaseLayout pageTitle={frontmatter.title}>
   <p><em>{frontmatter.description}</em></p>
@@ -14,6 +18,8 @@ const { frontmatter } = Astro.props;
       <p class="m-1 border-[1px] border-x-cyan-100 rounded-md px-2"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
   </div>
-
-  <slot />
+  <article class="prose px-10 bg-white min-w-full min-h-full">
+    <slot />
+  </article>
+  
 </BaseLayout>
